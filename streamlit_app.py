@@ -23,7 +23,7 @@ if google_api_key:
         ('system', "Translate the following into {language}:"),
         ('user', 'Text: {text}')
     ])
-    llm = GoogleGenerativeAI(model="gemini-1.5-pro-latest", temperature=temperature)
+    llm = GoogleGenerativeAI(model="gemini-1.5-pro-latest", temperature=temperature, google_api_key=google_api_key)
     parser = StrOutputParser()
     chain = prompt_template | llm | parser
     
